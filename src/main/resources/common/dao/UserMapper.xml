@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.wetroad.ws.userservice.dao.UserDAO">
+
+	<!-- <parameterMap type="User" id="userParamMap"> </parameterMap> -->
+	<!-- result maps -->
+	<resultMap id="userRetMap" type="User">
+		<id column="USER_PK" property="userPK" />
+		<result column="DISPLAY_NAME" property="displayName" />
+		<result column="GENDER" property="gender" />
+		<result column="BIRTH_YEAR" property="birthYear" />
+		<result column="BIRTH_MONTH" property="birthMonth" />
+		<result column="CREATE_TIME" property="createTime" />
+		<result column="MODIFY_TIME" property="modifyTime" />
+	</resultMap>
+
+	<insert id="insertUser" parameterType="User">
+	<![CDATA[
+		INSERT INTO USER
+		(
+			USER_PK,
+			DISPLAY_NAME,
+			GENDER,
+			BIRTH_YEAR,
+			BIRTH_MONTH,
+			CREATE_TIME,
+			MODIFY_TIME
+		)
+		VALUES (
+			#{userPK},
+			#{displayName},
+			#{gender},
+			#{birthYear},
+			#{birthMonth},
+			NOW(3),
+			NOW(3)
+		)
+	]]>
+	</insert>
+
+	<select id="getUser" resultMap="userRetMap" parameterType="java.lang.String">
+	<![CDATA[
+		SELECT
+			USER_PK,
+			DISPLAY_NAME,
+			GENDER,
+			BIRTH_YEAR,
+			BIRTH_MONTH,
+			CREATE_TIME,
+			MODIFY_TIME
+		FROM
+			USER
+		WHERE
+			USER_PK=#{value};
+	]]>
+	</select>
+	
+	<update id="updateUser" parameterType="User">
+	<![CDATA[
+	UPDATE USER
+	   SET DISPLAY_NAME=IFNULL(#{displayName},DISPLAY_NAME),
+			GENDER=IFNULL(#{gender},GENDER),
+			BIRTH_YEAR=IFNULL(#{birthYear},BIRTH_YEAR),
+			BIRTH_MONTH=IFNULL(#{birthMonth},BIRTH_MONTH),
+			MODIFY_TIME=NOW(3)
+		WHERE
+			USER_PK=#{userPK};
+	]]>
+	</update>
+</mapper>

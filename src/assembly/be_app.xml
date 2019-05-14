@@ -1,0 +1,43 @@
+<assembly xmlns="http://maven.apache.org/ASSEMBLY/2.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.0.0 http://maven.apache.org/xsd/assembly-2.0.0.xsd">
+  <!-- be_app stands for backend application -->
+  <id>be_app</id>
+  <formats>
+    <format>tar.gz</format>
+    <format>tar.bz2</format>
+    <format>zip</format>
+  </formats>
+  <includeBaseDirectory>false</includeBaseDirectory>
+  <fileSets>
+    <fileSet>
+      <directory>${project.basedir}</directory>
+      <outputDirectory>/wetroad/ws/${project.artifactId}/${project.version}</outputDirectory>
+      <includes>
+        <include>README*</include>
+        <include>LICENSE*</include>
+        <include>NOTICE*</include>
+      </includes>
+    </fileSet>
+    <fileSet>
+      <directory>${project.basedir}/src/main/scripts</directory>
+      <outputDirectory>/wetroad/ws/${project.artifactId}/${project.version}/scripts</outputDirectory>
+      <includes>
+        <include>*.sh</include>
+      </includes>
+      <filtered>true</filtered>
+      <lineEnding>unix</lineEnding>
+    </fileSet>
+    <fileSet>
+      <directory>${project.basedir}/src/main/resources</directory>
+      <outputDirectory>wetroad/ws/${project.artifactId}/${project.version}/conf</outputDirectory>
+      <filtered>true</filtered>
+    </fileSet>
+  </fileSets>
+  <dependencySets>
+  	<dependencySet>
+      <outputDirectory>/wetroad/ws/${project.artifactId}/${project.version}/lib</outputDirectory>
+      <useProjectArtifact>true</useProjectArtifact>
+  	</dependencySet>
+  </dependencySets>
+</assembly>

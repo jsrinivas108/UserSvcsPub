@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:property-placeholder location="classpath:app.properties" ignore-unresolvable="true"/>
+	
+	<import resource="classpath:dao/db-appCntxt.xml"/>
+
+	<bean id="userService" class="com.wetroad.ws.userservice.japi.impl.UserServiceImpl">
+		<property name="userDAO" ref="userDAO" />
+	</bean>
+
+	<bean id="responseTransformer" class="com.wetroad.ws.userservice.wsapi.AppResponseTransformer">
+	<!--
+		 * OuterMap: 
+	 * 		key - <AppResponse.status>~<AppResponse.apiCallName>~<AppResponse.reasoCode[0]>
+	 * 				except for first element, all other elements of the key are optional including separators
+	 * 		valueMap: 
+	 * 			key - HTTP_STATUS, BODY_TEMPLATE
+	 * 			values - valid http status code or body template
+	 -->
+		<property name="responseMap">
+			<map>
+				<entry key="SUCCESS">
+					<map>
+						<entry key="HTTP_STATUS" value="200" />
+					</map>
+				</entry>
+				<entry key="VALIDATION_FAILURE">
+					<map>
+						<entry key="HTTP_STATUS" value="412" />
+						<entry key="BODY_TEMPLATE" value="{'callName' : '{CALL_NAME}', 'reasonCodes' : '{REASON_CODES}' }" />
+					</map>
+				</entry>
+				<entry key="BUSINESS_FAILURE">
+					<map>
+						<entry key="HTTP_STATUS" value="403" />
+						<entry key="BODY_TEMPLATE" value="{'callName' : '{CALL_NAME}', 'reasonCodes' : '{REASON_CODES}' }" />
+					</map>
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+</beans>

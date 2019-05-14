@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<typeAliases>
+		<typeAlias type="com.wetroad.ws.userservice.japi.vo.UserVO"
+			alias="User" />
+	</typeAliases>
+	<!-- 
+	<typeHandlers>
+		<typeHandler javaType="java.util.Locale" jdbcType="VARCHAR" 
+	                handler="com.wetroad.ws.userservice.dao.typehandler.LocaleHandler" />
+	</typeHandlers>
+	 -->
+	<mappers>
+		<mapper resource="dao/UserMapper.xml" />
+	</mappers>
+</configuration>
