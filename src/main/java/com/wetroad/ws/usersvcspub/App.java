@@ -19,7 +19,8 @@ import spark.ResponseTransformer;
 import spark.Spark;
 
 /**
- *
+ * This class is the entry point for service startup, loading config,
+ * service call routing and service call translation from HTTP to Java service layer.
  */
 public class App 
 {

@@ -2,6 +2,8 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
+<!-- groupId/artifactId should match the package structure in src/main/java and src/test/java -->
+<!-- Project should use standard maven directory structure for all the sources. Navigate through all the directories and files -->
 	<groupId>com.wetroad.ws</groupId>
 	<artifactId>UserSvcsPub</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
@@ -129,6 +131,7 @@
 				</configuration>
 			</plugin>
 			<plugin>
+				<!--  this is for local execution -->
 				<artifactId>maven-resources-plugin</artifactId>
 				<executions>
 					<execution>
@@ -164,6 +167,7 @@
 				</configuration>
 			</plugin>
 			<plugin>
+				<!--  this is for deployment -->
 				<artifactId>maven-assembly-plugin</artifactId>
 				<configuration>
 					<descriptors>
