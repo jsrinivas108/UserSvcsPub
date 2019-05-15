@@ -23,7 +23,7 @@ sed -i "s/db.password=.*/db.password=$password/g" $CONF_DIR/jdbc.properties
 cd $SCRIPTS_DIR
 rm $SCRIPTS_DIR/stopFile
 _JAVA_OPTIONS=""
-nohup $JAVA_HOME/bin/java -Xmx2G -cp $CLASSPATH -Dcomponent=${project.artifactId}-${project.version} -DstopFile=$SCRIPTS_DIR/stopFile com.wetroad.ws.userservice.App $* &
+nohup $JAVA_HOME/bin/java -Xmx2G -cp $CLASSPATH -Dcomponent=${project.artifactId}-${project.version} -DstopFile=$SCRIPTS_DIR/stopFile com.wetroad.ws.usersvcspub.App $* &
 
 PID=$!
 echo $PID > $SCRIPTS_DIR/pid

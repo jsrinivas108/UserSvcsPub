@@ -1,7 +1,7 @@
-package com.wetroad.ws.userservice.japi;
+package com.wetroad.ws.usersvcspub.japi;
 
-import com.wetroad.ws.userservice.japi.vo.AppResponse;
-import com.wetroad.ws.userservice.japi.vo.UserVO;
+import com.wetroad.ws.usersvcspub.japi.vo.AppResponse;
+import com.wetroad.ws.usersvcspub.japi.vo.UserVO;
 
 public interface UserService {
 

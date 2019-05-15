@@ -11,11 +11,11 @@
 	
 	<import resource="classpath:dao/db-appCntxt.xml"/>
 
-	<bean id="userService" class="com.wetroad.ws.userservice.japi.impl.UserServiceImpl">
+	<bean id="userService" class="com.wetroad.ws.usersvcspub.japi.impl.UserServiceImpl">
 		<property name="userDAO" ref="userDAO" />
 	</bean>
 
-	<bean id="responseTransformer" class="com.wetroad.ws.userservice.wsapi.AppResponseTransformer">
+	<bean id="responseTransformer" class="com.wetroad.ws.usersvcspub.wsapi.AppResponseTransformer">
 	<!--
 		 * OuterMap: 
 	 * 		key - <AppResponse.status>~<AppResponse.apiCallName>~<AppResponse.reasoCode[0]>

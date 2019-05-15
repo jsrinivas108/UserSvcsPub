@@ -1,4 +1,4 @@
-package com.wetroad.ws.userservice.japi.vo;
+package com.wetroad.ws.usersvcspub.japi.vo;
 
 import java.sql.Timestamp;
 

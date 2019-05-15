@@ -1,4 +1,4 @@
-package com.wetroad.ws.userservice.wsapi;
+package com.wetroad.ws.usersvcspub.wsapi;
 
 import java.util.Map;
 
@@ -6,7 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.wetroad.ws.userservice.japi.vo.AppResponse;
+import com.wetroad.ws.usersvcspub.japi.vo.AppResponse;
 
 import spark.Response;
 import spark.ResponseTransformer;

@@ -1,6 +1,6 @@
-package com.wetroad.ws.userservice.dao;
+package com.wetroad.ws.usersvcspub.dao;
 
-import com.wetroad.ws.userservice.japi.vo.UserVO;
+import com.wetroad.ws.usersvcspub.japi.vo.UserVO;
 
 public interface UserDAO {
 

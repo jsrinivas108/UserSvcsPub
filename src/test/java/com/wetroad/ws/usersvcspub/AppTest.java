@@ -1,4 +1,4 @@
-package com.wetroad.ws.userservice;
+package com.wetroad.ws.usersvcspub;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

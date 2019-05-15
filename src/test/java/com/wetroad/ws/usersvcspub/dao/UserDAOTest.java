@@ -1,4 +1,4 @@
-package com.wetroad.ws.userservice.dao;
+package com.wetroad.ws.usersvcspub.dao;
 
 import java.sql.Timestamp;
 import java.util.UUID;
@@ -11,7 +11,8 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.wetroad.ws.userservice.japi.vo.UserVO;
+import com.wetroad.ws.usersvcspub.dao.UserDAO;
+import com.wetroad.ws.usersvcspub.japi.vo.UserVO;
 
 import junit.framework.TestCase;
 

@@ -1,13 +1,13 @@
-package com.wetroad.ws.userservice.japi.impl;
+package com.wetroad.ws.usersvcspub.japi.impl;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.wetroad.ws.userservice.dao.UserDAO;
-import com.wetroad.ws.userservice.japi.UserService;
-import com.wetroad.ws.userservice.japi.vo.AppResponse;
-import com.wetroad.ws.userservice.japi.vo.AppResponse.Status;
-import com.wetroad.ws.userservice.japi.vo.UserVO;
+import com.wetroad.ws.usersvcspub.dao.UserDAO;
+import com.wetroad.ws.usersvcspub.japi.UserService;
+import com.wetroad.ws.usersvcspub.japi.vo.AppResponse;
+import com.wetroad.ws.usersvcspub.japi.vo.AppResponse.Status;
+import com.wetroad.ws.usersvcspub.japi.vo.UserVO;
 
 public class UserServiceImpl implements UserService {
 

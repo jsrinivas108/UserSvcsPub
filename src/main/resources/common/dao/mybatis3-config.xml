@@ -5,13 +5,13 @@
 
 <configuration>
 	<typeAliases>
-		<typeAlias type="com.wetroad.ws.userservice.japi.vo.UserVO"
+		<typeAlias type="com.wetroad.ws.usersvcspub.japi.vo.UserVO"
 			alias="User" />
 	</typeAliases>
 	<!-- 
 	<typeHandlers>
 		<typeHandler javaType="java.util.Locale" jdbcType="VARCHAR" 
-	                handler="com.wetroad.ws.userservice.dao.typehandler.LocaleHandler" />
+	                handler="com.wetroad.ws.usersvcspub.dao.typehandler.LocaleHandler" />
 	</typeHandlers>
 	 -->
 	<mappers>

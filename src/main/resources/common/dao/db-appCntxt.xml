@@ -25,7 +25,7 @@
 
 	<bean id="userDAO" class="org.mybatis.spring.mapper.MapperFactoryBean">
 		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
-		<property name="mapperInterface" value="com.wetroad.ws.userservice.dao.UserDAO" />
+		<property name="mapperInterface" value="com.wetroad.ws.usersvcspub.dao.UserDAO" />
 	</bean>
 	
 </beans>

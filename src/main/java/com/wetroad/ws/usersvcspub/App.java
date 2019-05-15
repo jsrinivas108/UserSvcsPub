@@ -1,4 +1,4 @@
-package com.wetroad.ws.userservice;
+package com.wetroad.ws.usersvcspub;
 
 import java.io.File;
 import java.util.HashMap;
@@ -11,9 +11,9 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.wetroad.ws.userservice.japi.UserService;
-import com.wetroad.ws.userservice.japi.vo.AppResponse;
-import com.wetroad.ws.userservice.japi.vo.UserVO;
+import com.wetroad.ws.usersvcspub.japi.UserService;
+import com.wetroad.ws.usersvcspub.japi.vo.AppResponse;
+import com.wetroad.ws.usersvcspub.japi.vo.UserVO;
 
 import spark.ResponseTransformer;
 import spark.Spark;
